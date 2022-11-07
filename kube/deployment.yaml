@@ -1,0 +1,21 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+ name: cloudethix-nginx-nithi
+ labels:
+   app: nginx
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   app: nginx
+ template:
+  metadata:
+   labels:
+     app: nginx
+ spec:
+  containers:
+  - name: cloudethix-nginx-nithi
+    image: nithinandan/cloudethix-nginx-nithi:v1
+    ports:
+    - containerPort: 80
